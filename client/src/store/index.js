@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     data: [],
     dataPlayer: [],
-    dataWord: {}
+    dataWord: {},
+    enemyName:''
   },
   mutations: {
     insertMessage (state, data) {
@@ -21,6 +22,9 @@ export default new Vuex.Store({
     },
     newPlayer (state, data) {
       state.dataPlayer = data
+    },
+    enemyName(state, data){
+      state.enemyName = data
     }
   },
   actions: {
