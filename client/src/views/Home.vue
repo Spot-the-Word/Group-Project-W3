@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="home">
     <div v-for="(data, i) in namePlayer" :key="i">
       <h3>{{data.name}}</h3>
@@ -7,6 +8,14 @@
     <button @click="start">Start</button>
     <div>
       <p>{{ dataWord.clue }}</p>
+
+  <div style="padding: 10px;">
+        <div class="mb-3" style="padding:1em">
+            <label for="exampleFormControlInput1" class="form-label">Player's Name</label>
+            <input class="form-control" id="player2" placeholder="Player two's name">
+        </div>
+        <button type="button" class="btn btn-success">Input Name</button>
+
     </div>
     <label for="">Name </label>
     <input type="text" v-model="name">
@@ -17,11 +26,10 @@
     <input type="text" v-model="msg">
     <button @click="input">Submit</button>
   </div>
+</div>
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {
   name: 'Home',
   data () {
@@ -90,8 +98,6 @@ export default {
     dataWord () {
       return this.$store.state.dataWord
     }
-  },
-  components: {
   }
 }
 </script>
