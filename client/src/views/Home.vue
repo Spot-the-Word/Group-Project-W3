@@ -2,7 +2,7 @@
   <div class="home">
     <label for="">Name </label>
     <input type="text" v-model="name">
-    <button @click="inputName">Submit</button>
+    <button>Submit</button>
     <img alt="Vue logo" src="../assets/logo.png">
     <div v-for="(message, i) in messages" :key="i">
       <p>{{ message.name }} : <span>{{ message.msg }}</span></p>
@@ -17,7 +17,7 @@
 
 export default {
   name: 'Home',
-  data () {'fet'
+  data () {
     return {
       name: '',
       msg: ''
@@ -34,9 +34,11 @@ export default {
         name: this.name,
         msg: this.msg
       })
-      this.$socket.emit('setMsg', this.msg)
+      this.$socket.emit('setMsg', {
+        name: this.name,
+        msg: this.msg
+      })
       this.msg = ''
-      this.name = ''
     },
   },
   computed: {

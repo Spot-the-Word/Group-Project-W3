@@ -9,7 +9,7 @@ const words = require('./database')
 io.on("connection", (socket) => {
   console.log("user conected")
 
-  socket.on('setMsg', (data) => {
+  socket.on('setMsg', data => {
     console.log(data)
     socket.broadcast.emit('fetchMessage', data)
   })
