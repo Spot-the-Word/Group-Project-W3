@@ -36,10 +36,6 @@ const words = [
     clue: 'Nemo adalah seekor'
   },
   {
-    word: '9',
-    clue: 'Tebak angka (1-10)'
-  },
-  {
     word: 'Bola',
     clue: 'Teman tsubasa adalah'
   },
@@ -62,14 +58,6 @@ const words = [
   {
     word: '20',
     clue: 'Berapa kali angka 7 muncul dari 1 hingga 100'
-  },
-  {
-    word: '6',
-    clue: 'Dalam suatu kolam terdapat 12 ekor ikan. Suatu hari 5 ikan dimakan bangau, 3 tenggelam, dan satu dimakan kucing. Berapa sisanya?'
-  },
-  {
-    word: 'D',
-    clue: 'Apa huruf kelima dalam abjad?'
   },
   {
     word: '10',
@@ -146,10 +134,6 @@ const words = [
   {
     word: 'Ikan',
     clue: 'Nemo adalah seekor'
-  },
-  {
-    word: '9',
-    clue: 'Tebak angka (1-10)'
   }
 ]
 

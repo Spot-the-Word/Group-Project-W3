@@ -5,7 +5,7 @@
     <div style="padding: 10px;">
       <div class="mb-3" style="padding:1em">
           <label for="exampleFormControlInput1" class="form-label" >Player's Name</label>
-          <input class="form-control" id="playerName" placeholder="Acong" v-model="name">
+          <input class="form-control" id="playerName" placeholder="Acong" v-model="name" required>
       </div>
       <button type="button" class="btn btn-success" @click.prevent="registerName">Input Name</button>
     </div>
