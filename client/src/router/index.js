@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import PlayPage from '../views/PlayPage.vue'
+import WinPage from '../views/WinPage.vue'
+import LosePage from '../views/LosePage.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,6 +16,16 @@ const routes = [
     path: '/play',
     name: 'PlayPage',
     component: PlayPage
+  },
+  {
+    path: '/losepage',
+    name: 'LosePage',
+    component: LosePage
+  },
+  {
+    path: '/winpage',
+    name: 'WinPage',
+    component: WinPage
   }
 
   // {
