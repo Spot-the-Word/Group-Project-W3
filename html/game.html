@@ -5,27 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="game.css">
     <title>Document</title>
 </head>
 <body>
-    <div style="height;">
-        <div style="background-image:url(https://www.wallpapertip.com/wmimgs/188-1886307_geometric-desktop-backgrounds.png); background-size: 720;">
-            <div style="padding: 1em;">
-                <h2> Kata</h2>
+    <div>
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light" style="padding:10px 20px">
+            <img src="./image/SPOT THE WORD_free-file.png" style="width:75px">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup"style="margin-left:20px">
+                <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home</a>
+                <a class="nav-item nav-link" href="#">About</a>
+                </div>
             </div>
-            <div style="padding: 1em;">
-                <h2> Clue</h2>
-                <h3> clue disini</h3>
+            </nav>
+            <!-- ----navbar--- -->
+        <div style="background-image:url('./image/flat-4041617_1920.png') ; background-size: cover; padding-top: 3em;">
+            <div style="padding-top: 3em;">
             </div>
-            <div class="mb-3" style="padding: 1em;">
-                <label for="exampleFormControlInput1" class="form-label" style="padding-top: 10px;">Put Your Anser Here</label><br>
-                <input class="form-control" id="answer" placeholder="Your Answer"><br>
-                <button type="button" class="btn btn-success">Enter</button>
+            <div style="padding: 1em;" class="row d-flex justify-content-center">
+                <h2 style="text-align:center;vertical-align: middle"> Clue</h2>
             </div>
-            <div style="padding: 1em;">
-                <h3>SCORS</h3>
+            <div class="row d-flex justify-content-center;">
+                <div style="text-align:center;vertical-align: middle;">
+                    <div class="col" style="padding: 1em">
+                        <label class="form-label form-rounded"  style="padding-top: 10px;">Put Your Answer Here</label><br>
+                        <input class="form-control form-rounded border border-secondary  w-25 mx-auto" id="answer" placeholder="Your Answer"><br>
+                        <button type="button" class="btn btn-success">Enter</button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div style="background-color: antiquewhite; padding: 30px; margin:20px" class="w-25 rounded text-center">
+                    <h3>Player 1</h3>
+                    <h2> 100</h2>
+            </div>
+            <div style="background-color: antiquewhite; padding: 30px; margin:20px" class="w-25 rounded text-center">
+                <h3 >Player 1</h3>
                 <h2> 100</h2>
-            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
