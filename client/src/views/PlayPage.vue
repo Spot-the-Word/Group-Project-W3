@@ -1,50 +1,32 @@
 <template>
-  <div>
-    <div>
-      <h2>Level {{ $store.state.level }}</h2>
-      <h3>{{ name }} (you) VS {{ $store.state.enemyName }}</h3>
-      <h3>{{ score }} | {{ enemyScore }}</h3>
-
-
-
-      <!-- </div>
-    <button @click="start">Start</button>
-    <div> -->
-      <!-- <h1>{{ dataWord.word }}</h1>
-      <p>{{ dataWord.clue }}</p>
-      <label for="">Name </label>
-      <input type="text" v-model="name" />
-      <button @click="inputName">Submit</button>
-      <div v-for="(message, i) in messages" :key="i">
-        <p>
-          {{ message.name }} : <span>{{ message.msg }}</span>
-        </p>
-      </div>
-      <input type="text" v-model="msg" />
-      <button @click="input">Submit</button> -->
+<div id="page">
+            <div style="padding-top: 10px;">
+            </div>
+            <div class="text-center">
+              <h2 style="text-align:center;vertical-align: middle" class="mb-5">Level {{ $store.state.level }}</h2>
+              <h1 style="text-align:center;vertical-align: middle; font-size:80px" class="mb-2"> {{ dataWord }}</h1>
+                <h3 style="text-align:center;vertical-align: middle" class="mt-4"> {{ $store.state.dataWord.clue }}</h3>
+            </div>
+            <div class="row d-flex justify-content-center;">
+                <div style="text-align:center;vertical-align: middle;">
+                    <div class="col" style="padding: 1em">
+                        <label class="form-label form-rounded"  style="padding-top: 10px;">Put Your Answer Here</label><br>
+                        <input class="form-control form-rounded border border-secondary  w-25 mx-auto" id="answer" placeholder="Your Answer" v-model="msg"><br>
+                        <button type="button" class="btn btn-success" @click.prevent="input">Enter</button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div style="background-color: antiquewhite; padding: 30px; margin:20px" class="w-25 rounded text-center">
+                    <h3>{{ name }} </h3>
+                    <h2> {{ score }} </h2>
+            </div>
+            <div style="background-color: antiquewhite; padding: 30px; margin:20px" class="w-25 rounded text-center">
+                <h3 >{{ $store.state.enemyName }}</h3>
+                <h2> {{ enemyScore }}</h2>
+        </div>
     </div>
-    <div style="padding: 1em">
-      <h2>SPOT THE WORD !</h2>
     </div>
-    <div style="padding: 1em">
-      <h1>{{ dataWord }}</h1>
-      <h3>{{ $store.state.dataWord.clue }}}</h3>
-    </div>
-    <div class="mb-3" style="padding: 1em">
-      <label
-        for="exampleFormControlInput1"
-        class="form-label"
-        style="padding-top: 10px"
-        >Put Your Anser Here</label
-      ><br />
-      <input class="form-control" id="answer" placeholder="Your Answer" v-model="msg" /><br />
-      <button type="button" class="btn btn-success" @click.prevent="input">Enter</button>
-    </div>
-    <div style="padding: 1em">
-      <h3>SCORE</h3>
-      <h2>100</h2>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -75,7 +57,7 @@ export default {
       //random questionnya
       dataWord() {
         const word = this.$store.state.dataWord.word
-        const removeCount = Math.floor(0.4 * word.length);
+        const removeCount = Math.floor(0.6 * word.length);
         const indexToRemove = [];
         let modifiedWord = "";
         for (let i = 0; i < removeCount; i++) {
@@ -143,7 +125,7 @@ export default {
     },
     nextRound(){
       // this.$store.commit('nextRound')
-      if(this.$store.state.score >= 30){
+      if(this.$store.state.score === 100){
         console.log('masuk next round socket', localStorage.name);
         this.$router.push('/winpage')
       }
@@ -172,7 +154,7 @@ export default {
         
         this.$store.commit('addScore')
         this.$socket.emit('enemyScore')
-        if(this.$store.state.score === 30 ){
+        if(this.$store.state.score === 100 ){
           // this.$store.commit('resetWinnerScore')
 
           // berhenti game show winner
@@ -221,5 +203,12 @@ export default {
 };
 </script>
 
-<style>
+
+<style scoped>
+#page{
+  background-size: cover;
+  padding-top: 3em;
+  min-height: 100vh;
+  background-image:url('../assets/flat-4041617_1920.png');
+}
 </style>
