@@ -4,8 +4,9 @@ const http = require("http").createServer(app)
 const port = process.env.PORT || 3000
 const io = require('socket.io')(http)
 const words = require('./database')
+const cors = require('cors')
 
-
+app.use(cors())
 let playerNames = []
 
 io.on("connection", (socket) => {
