@@ -1,17 +1,21 @@
 <template>
 <div>
   <div class="home">
-    
-    <div style="padding: 10px;">
-      <div class="mb-3" style="padding:1em">
-          <label for="exampleFormControlInput1" class="form-label" >Player's Name</label>
-          <input class="form-control" id="playerName" placeholder="Acong" v-model="name" required>
-      </div>
-      <button type="button" class="btn btn-success" @click.prevent="registerName">Input Name</button>
-    </div>
-    <p v-if="displayReady">Please wait for the enemy to pick a name</p>
-  </div>
-</div>
+      <div class="container" style="padding-top: 6em;" >
+        <div class="row">
+            <div class="col col-6">
+                <img src="https://image.freepik.com/free-vector/people-character-surrounded-with-gadgets-flat-design-concept-illustration_5379-225.jpg">
+            </div>
+            <div class="col col-3" style="padding-top:5em">
+                <label class="form-label col-xs-4" style="vertical-align: middle;padding-bottom: 1em; text-align: center;">Player's Name</label>
+                <input class="form-control form-rounded" id="player" placeholder="Player's name" style="margin-bottom:3em; size:5" v-model="name" required>
+                <button type="button" class="btn btn-primary btn-md col-xs-4"  @click.prevent="registerName">Enter here</button>
+            </div>
+              <p v-if="displayReady">Please wait for the enemy to pick a name</p>
+         </div>
+    </div> 
+  </div> 
+</div> 
 </template>
 
 <script>
@@ -49,7 +53,12 @@ export default {
         this.$router.push('/play')
       }
     }
-  }
+  },
+  created() {
+      localStorage.clear()
+      this.$socket.emit('resetPlayerName')
+      this.$store.commit('resetAll')
+  },
   
 };
 </script>
